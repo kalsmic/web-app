@@ -8,11 +8,13 @@ COPY package.json /usr/src/app/package.json
 
 RUN npm install -g @angular/cli@9.1.12
 
-CMD ng build
 
 RUN npm install
 
+
 COPY . .
+
+RUN npm rum build:prod
 
 FROM nginx:1.19.3
 
